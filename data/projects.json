@@ -1,0 +1,26 @@
+{
+   "spotlight_project_id": 1,
+   "featured_projects": [
+      {
+         "id": 1,
+         "title": "Nmap-NSE-Script-Collection",
+         "description": "Custom Nmap Scripting Engine scripts for defensive, informational security audits, flagging missing security headers, insecure cookie flags, and other common misconfigurations across HTTP, DNS, SMB and TLS services. Built to report rather than exploit: no denial-of-service and no destructive payloads.",
+         "date": "October 2026",
+         "status": "active",
+         "tools_tech": ["Lua", "NSE", "Nmap", "Python"],
+         "features": [
+            "Each script targets one specific real-world misconfiguration and reports the finding in a clear, actionable format",
+            "Coverage across services such as HTTP, DNS, SMB, SSL/TLS, FTP and databases",
+            "Informational by design - no denial-of-service and no destructive payloads, so a run is safe on production infrastructure",
+            "Runs standalone or as part of a larger infrastructure scan"
+         ],
+         "github": "https://github.com/NexzaDev/Nmap-NSE-Script-Collection",
+         "live": ""
+      }
+   ],
+   "collaborative_projects": [],
+   "other_projects": [],
+   "community_projects": [],
+   "open_source_contributions": [],
+   "community_discussions": []
+}

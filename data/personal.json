@@ -1,0 +1,78 @@
+{
+   "name": "Nexza",
+   "title": "Network Engineer · Developer · Cyber Security",
+   "role": "Network Engineer · Developer · Cyber Security",
+   "location": "Greece",
+   "timezone": "Europe/Athens",
+   "intro": "Network engineer and security-minded developer focused on networking, protocols and defensive security. Web development and scripting support that work.",
+   "role_label": "Network Engineer · Developer · Cyber Security",
+   "hero_taglines": [
+      "Networks, protocols and defensive security.",
+      "Understand the service before testing it.",
+      "Report findings, never exploit them.",
+      "Web and scripting support the network work."
+   ],
+   "headline": "I build tools for *networks* and network security.",
+   "hero_greeting": "Hi, I'm",
+   "availability": "Open to networking and security projects",
+   "contact": {
+      "github": "NexzaDev"
+   },
+   "about": {
+      "greeting": "👋 Hi, my name is Nexza.",
+      "network_focus": "🌐 Network engineering and network security come first: protocols, services, Linux and defensive security testing.",
+      "open_source": "🚀 Open-source tools are documented, informational and designed to report findings rather than exploit systems.",
+      "secondary": "🧰 Web development with Next.js and React, alongside scripting in Lua, Python and Bash.",
+      "learning": "🎓 Fully self-taught. I learn by reading the documentation, building a minimal implementation, then stress testing it myself."
+   },
+   "stats": {
+      "platforms": {
+         "link_label": "View",
+         "github": {
+            "label": "GitHub",
+            "contributions": "Contributions",
+            "pull_requests": "Pull requests",
+            "longest_streak": "Longest streak",
+            "streak_value": "{days} days",
+            "updated": "In the last year | updated {date}",
+            "languages": "Top languages by code size",
+            "profile_label": "GitHub profile @{username}",
+            "calendar": {
+               "label": "Daily GitHub contributions over the last year",
+               "current": "Current streak",
+               "less": "Less",
+               "more": "More",
+               "loading": "Loading GitHub contributions",
+               "summary": "{label}. {current} {days}.",
+               "days_one": "{count} day",
+               "days_many": "{count} days",
+               "tip": "{what} on {when}",
+               "contributions_none": "No contributions",
+               "contributions_one": "{count} contribution",
+               "contributions_many": "{count} contributions"
+            }
+         }
+      }
+   },
+   "languages": [],
+   "social_profiles": [
+      {
+         "id": 1,
+         "name": "GitHub",
+         "link": "https://github.com/NexzaDev",
+         "icon": "FaGithub"
+      },
+      {
+         "id": 2,
+         "name": "X",
+         "link": "https://x.com/NexzaDev",
+         "icon": "FaXTwitter"
+      },
+      {
+         "id": 3,
+         "name": "Instagram",
+         "link": "https://www.instagram.com/nexzadev",
+         "icon": "FiInstagram"
+      }
+   ]
+}

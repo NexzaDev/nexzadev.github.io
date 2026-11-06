@@ -1,0 +1,93 @@
+{
+   "header": {
+      "name": "Nexza",
+      "tagline": ["Network Engineer", "Developer", "Cyber Security", "Greece"],
+      "links": [
+         [
+            {
+               "t": "a",
+               "href": "https://github.com/NexzaDev",
+               "c": ["GitHub: NexzaDev"]
+            }
+         ],
+         [
+            {
+               "t": "a",
+               "href": "mailto:nexzadevbusiness@proton.me",
+               "c": ["Email"]
+            }
+         ]
+      ]
+   },
+   "sections": [
+      {
+         "title": "Profile",
+         "blocks": [
+            {
+               "t": "para",
+               "c": [
+                  "Self-taught engineer focused on networking, network security and defensive security testing. Web development and scripting support this work."
+               ]
+            }
+         ]
+      },
+      {
+         "title": "Experience",
+         "blocks": [
+            {
+               "t": "entry",
+               "title": ["Co-Founder, Lead Developer"],
+               "subtitle": ["Sonix-Devs"],
+               "date": ["Ongoing"],
+               "meta": [],
+               "items": [
+                  [
+                     "A cybersecurity-focused programming platform building projects in ethical hacking, penetration testing, digital forensics, and security research."
+                  ]
+               ]
+            }
+         ]
+      },
+      {
+         "title": "Selected Project",
+         "blocks": [
+            {
+               "t": "entry",
+               "title": ["Nmap-NSE-Script-Collection"],
+               "subtitle": ["NexzaDev"],
+               "date": [],
+               "meta": ["Lua · MIT"],
+               "items": [
+                  [
+                     "Custom scripts for defensive, informational security audits across HTTP, DNS, SMB and TLS services. Built to report rather than exploit."
+                  ]
+               ]
+            }
+         ]
+      },
+      {
+         "title": "Skills",
+         "blocks": [
+            {
+               "t": "list",
+               "items": [
+                  {
+                     "c": [
+                        "Networking & security: Linux, Python, Lua, Bash, WebSockets"
+                     ]
+                  },
+                  {
+                     "c": ["Languages: JavaScript, TypeScript, HTML, CSS, SQL"]
+                  },
+                  {
+                     "c": ["Web: React, Next.js, Node.js"]
+                  },
+                  {
+                     "c": ["Tools: Git/GitHub, VS Code, Figma, Canva, CapCut"]
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}

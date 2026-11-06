@@ -1,0 +1,13 @@
+{
+   "color": "#e5b93c",
+   "ink": "#080b13",
+   "eyeColor": "#f3f6fb",
+   "silhouette": "M50 4L86 12L86 52L74 74L50 96L26 74L14 52L14 12Z",
+   "crest": "M50 22L64 46L36 46Z",
+   "visor": "M30 56L70 56L70 64L30 64Z",
+   "eyes": [
+      { "x": 36, "y": 68, "width": 8, "height": 12, "rx": 4 },
+      { "x": 56, "y": 68, "width": 8, "height": 12, "rx": 4 }
+   ],
+   "wink": "M55 79Q60 72 65 77"
+}

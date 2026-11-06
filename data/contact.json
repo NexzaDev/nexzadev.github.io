@@ -1,0 +1,48 @@
+{
+   "contact_options": [
+      {
+         "id": 1,
+         "icon": "MdOutlineEmail",
+         "title": "Email Me",
+         "value": "nexzadevbusiness@proton.me",
+         "link": "mailto:nexzadevbusiness@proton.me",
+         "message": "Email"
+      },
+      {
+         "id": 2,
+         "icon": "FaGithub",
+         "title": "GitHub",
+         "value": "NexzaDev",
+         "link": "https://github.com/NexzaDev",
+         "message": "Follow"
+      },
+      {
+         "id": 3,
+         "icon": "FaXTwitter",
+         "title": "X",
+         "value": "@NexzaDev",
+         "link": "https://x.com/NexzaDev",
+         "message": "Follow"
+      },
+      {
+         "id": 4,
+         "icon": "FiInstagram",
+         "title": "Instagram",
+         "value": "@nexzadev",
+         "link": "https://www.instagram.com/nexzadev",
+         "message": "Message"
+      },
+      {
+         "id": 5,
+         "icon": "FaGithub",
+         "title": "Sonix-Devs",
+         "value": "github.com/Sonix-Devs",
+         "link": "https://github.com/Sonix-Devs",
+         "message": "Visit"
+      }
+   ],
+   "email_config": {
+      "fallback_email": "nexzadevbusiness@proton.me",
+      "validation_pattern": "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\\.)+[a-zA-Z](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])$"
+   }
+}

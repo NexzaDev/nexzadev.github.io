@@ -1,0 +1,74 @@
+{
+   "name": "nexza-portfolio",
+   "version": "4.21.3",
+   "type": "module",
+   "private": true,
+   "scripts": {
+      "dev": "vite",
+      "prebuild": "npm run validate:data && npm run prepare:resume && node scripts/write-headers.js",
+      "build": "vite build",
+      "preview": "vite preview",
+      "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
+      "lint:fix": "eslint . --fix",
+      "format": "prettier . --write",
+      "format:check": "prettier . --check",
+      "test": "vitest run",
+      "validate:data": "node scripts/validate-data.js",
+      "brand:icons": "node scripts/generate-brand-icons.js",
+      "check": "npm run format:check && npm run lint && npm run type-check && npm run test && npm run validate:data",
+      "type-check": "tsc --noEmit",
+      "clean": "rimraf build node_modules/.vite",
+      "prepare:resume": "node scripts/prepare-resume.js"
+   },
+   "dependencies": {
+      "@emailjs/browser": "^5.0.3",
+      "@fontsource-variable/bricolage-grotesque": "^5.3.0",
+      "@fontsource-variable/geist-mono": "^5.3.0",
+      "@fontsource-variable/inter": "^5.2.8",
+      "@fontsource/instrument-serif": "^5.3.0",
+      "@fontsource/yellowtail": "^5.3.0",
+      "@number-flow/react": "^0.6.2",
+      "@tailwindcss/vite": "^4.3.1",
+      "cmdk": "^1.1.1",
+      "lenis": "^1.3.27",
+      "lucide-react": "^1.61.0",
+      "motion": "^14.6.0",
+      "react": "^19.3.1",
+      "react-dom": "^19.3.1",
+      "react-icons": "^5.6.0",
+      "tailwindcss": "^4.3.1"
+   },
+   "devDependencies": {
+      "@eslint-react/eslint-plugin": "5.28.7",
+      "@eslint/js": "^10.0.1",
+      "@testing-library/react": "^16.3.2",
+      "@types/react": "^19.3.0",
+      "@types/react-dom": "^19.3.0",
+      "@vitejs/plugin-react": "^6.1.2",
+      "eslint": "^10.13.0",
+      "eslint-plugin-jsx-a11y-x": "0.2.0",
+      "eslint-plugin-react-hooks": "^7.1.1",
+      "eslint-plugin-react-refresh": "^0.5.7",
+      "globals": "^17.13.0",
+      "jsdom": "^29.1.1",
+      "prettier": "^3.9.10",
+      "rimraf": "^6.1.3",
+      "typescript": "^5.9.3",
+      "typescript-eslint": "^8.72.0",
+      "vite": "^8.3.5",
+      "vitest": "^5.0.5"
+   },
+   "engines": {
+      "node": ">=20"
+   },
+   "description": "Nexza - a React 19 + Vite portfolio for a network engineer. JSON-driven content, dark theme with blue and gold accents, orbiting stack portrait and full keyboard navigation.",
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/NexzaDev/nexzadev.github.io.git"
+   },
+   "author": "Nexza <nexzadevbusiness@proton.me>",
+   "license": "GPL-3.0",
+   "bugs": {
+      "url": "https://github.com/NexzaDev/nexzadev.github.io/issues"
+   }
+}

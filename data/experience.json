@@ -1,0 +1,13 @@
+{
+   "professional_experience": [
+      {
+         "id": 1,
+         "date": "Ongoing",
+         "title": "Co-Founder, Lead Developer",
+         "company": "Sonix-Devs",
+         "summary": "A cybersecurity-focused programming platform building projects in ethical hacking, penetration testing, digital forensics, and security research.",
+         "skills": ["Cyber Security", "Ethical Hacking", "Security Research"]
+      }
+   ],
+   "positions_of_responsibility": []
+}

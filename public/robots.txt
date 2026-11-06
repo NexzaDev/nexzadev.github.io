@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nexzadev.github.io/sitemap.xml

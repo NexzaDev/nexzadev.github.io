@@ -1,0 +1,7 @@
+# Build output
+build/
+
+
+# Knowledge graph output (gitignored, but keep prettier off it locally too)
+graphify-out/
+nexza-portfolio

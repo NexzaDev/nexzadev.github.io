@@ -1,0 +1,16 @@
+{
+   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+   "extends": ["config:recommended"],
+   "description": [
+      "Repo-level exceptions to the shared preset. Each rule names the compatibility constraint it protects; remove the rule when the constraint clears.",
+      "This install must stay native-binary free and must work on Android/Termux. Any dependency that adds a platform-specific prebuilt binary is blocked from an automatic bump."
+   ],
+   "packageRules": [
+      {
+         "description": "Node 20 is the floor (package.json engines). Renovate must not raise it past what Termux ships.",
+         "matchDepNames": ["node"],
+         "matchUpdateTypes": ["major"],
+         "enabled": false
+      }
+   ]
+}

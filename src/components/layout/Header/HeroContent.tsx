@@ -1,0 +1,244 @@
+import { lazy, Suspense, useEffect, useState, useMemo } from "react";
+import { motion } from "motion/react";
+import { ArrowDownRight, Download, FileText } from "lucide-react";
+import {
+   getHeadline,
+   getHeroGreeting,
+   getIntro,
+   getName,
+   getRoleLabel,
+} from "@data/personal";
+import { getUiCopy } from "@data/ui";
+import { GOLD, GOLD_LIGHT, MONO_FONT, TEXT_SECONDARY } from "@/constants/theme";
+import ErrorBoundary from "@components/common/ErrorBoundary";
+import ProximityText from "@components/ui/ProximityText";
+import MakerMark from "@components/ui/MakerMark";
+import useBreakpoint from "@hooks/useBreakpoint";
+import useSectionNavigation from "@hooks/useSectionNavigation";
+import HeroSocial from "./HeroSocial";
+import HeroTagline from "./HeroTagline";
+import { useIntroDone } from "@utils/introState";
+import {
+   HEADLINE_MASK_STYLE,
+   heroContainer,
+   heroHeadline,
+   heroHeadlineLine,
+   heroIntro,
+   heroLabel,
+   heroLogo,
+   heroRow,
+   passThroughTransform,
+} from "./heroMotion";
+
+const HeroLatest = lazy(() => import("./HeroLatest"));
+// Its chunk loads on the first "Read CV" click, then stays mounted so every
+// close still plays the exit animation.
+const CvViewerModal = lazy(
+   () => import("@components/ui/CvViewerModal/CvViewerModal"),
+);
+const COPY = getUiCopy().hero;
+const NBSP = "\u00A0";
+const CTA_TAP = { scale: 0.97 };
+
+/* Truthy on purpose: ErrorBoundary treats a falsy fallback as "not provided"
+   and renders its full "Something went wrong" panel. A failed HeroLatest or
+   CV viewer chunk should just drop out, not replace the hero. */
+const OMIT_LINE = <></>;
+
+/* Holds the LATEST row's slot while its chunk loads so the CTAs and socials
+   below do not jump when it arrives. Mirrors HeroLatest's layout and type
+   metrics (mono label + one 14px/1.6 line) with blank content. */
+const HeroLatestPlaceholder = () => {
+   const { isMobile } = useBreakpoint();
+   return (
+      <div
+         aria-hidden="true"
+         style={{
+            display: "flex",
+            flexDirection: isMobile ? "column" : "row",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: isMobile ? 4 : 14,
+         }}
+      >
+         <span style={{ fontFamily: MONO_FONT, fontSize: 11 }}>{NBSP}</span>
+         <span style={{ fontSize: 14, lineHeight: 1.6, minHeight: 44 }}>
+            {NBSP}
+         </span>
+      </div>
+   );
+};
+
+const HeroContent = () => {
+   const [cvOpen, setCvOpen] = useState(false);
+   const [cvLoaded, setCvLoaded] = useState(false);
+
+   useEffect(() => {
+      const openCv = () => {
+         setCvLoaded(true);
+         setCvOpen(true);
+      };
+      globalThis.addEventListener("nexza:open-cv", openCv);
+      return () => globalThis.removeEventListener("nexza:open-cv", openCv);
+   }, []);
+
+   const name = useMemo(() => getName(), []);
+   const intro = useMemo(() => getIntro(), []);
+   const roleLabel = useMemo(() => getRoleLabel(), []);
+   const headline = useMemo(() => getHeadline(), []);
+   const greeting = useMemo(() => getHeroGreeting(), []);
+
+   const { navigateToSection } = useSectionNavigation();
+   const introDone = useIntroDone();
+
+   return (
+      <motion.div
+         // Reserve separate lanes for the fixed nav and the scroll indicator.
+         className="relative z-10 flex flex-col items-center text-center px-6 pt-24 pb-24 md:pt-20 gap-5 md:gap-6 max-w-4xl mx-auto"
+         variants={heroContainer}
+         initial="hidden"
+         // Held until the intro curtain starts lifting, so it plays in view.
+         animate={introDone ? "visible" : "hidden"}
+      >
+         {/* Maker keeps the same footprint as the previous brand tile. */}
+         <motion.div variants={heroLogo}>
+            <MakerMark size="clamp(48px, 8vw, 64px)" animated />
+         </motion.div>
+
+         {/* Status badge */}
+         <motion.div variants={heroLabel}>
+            <span className="badge-pill hero-role">
+               <span
+                  className="animate-glow-pulse"
+                  style={{
+                     width: 8,
+                     height: 8,
+                     borderRadius: "50%",
+                     background: GOLD,
+                     flexShrink: 0,
+                  }}
+               />
+               <span>{roleLabel}</span>
+            </span>
+         </motion.div>
+
+         <HeroTagline />
+
+         {/* Heading: display face, name in accent, second line dimmed for
+             hierarchy (both lines equally bright read flat). Each line slides
+             up out of its own clipping wrapper; see HEADLINE_MASK_STYLE. */}
+         <motion.h1
+            className="display-heading leading-[1.06] text-text-primary"
+            style={{ fontSize: "clamp(2rem, 0.9rem + 3.5vw, 3.75rem)" }}
+            variants={heroHeadline}
+         >
+            <span style={HEADLINE_MASK_STYLE}>
+               <motion.span
+                  className="block text-balance"
+                  variants={heroHeadlineLine}
+               >
+                  {greeting} {/* The name is the hero's one gold word. */}
+                  <span
+                     className="font-signature"
+                     style={{ color: GOLD_LIGHT }}
+                  >
+                     {name}
+                  </span>
+                  {"."}
+               </motion.span>
+            </span>
+            <span style={HEADLINE_MASK_STYLE}>
+               <motion.span
+                  className="block text-balance text-text-secondary"
+                  variants={heroHeadlineLine}
+               >
+                  <ProximityText text={headline} />
+               </motion.span>
+            </span>
+         </motion.h1>
+
+         {/* Intro: what he works on, in two sentences. Replaces the old
+             cycling role labels, which said nothing specific. */}
+         <motion.p
+            className="text-base md:text-lg"
+            style={{ color: TEXT_SECONDARY, maxWidth: 680, lineHeight: 1.6 }}
+            variants={heroIntro}
+         >
+            {intro}
+         </motion.p>
+
+         {/* LATEST -- derived from data: newest merged PR + newest shipped project.
+             Own boundary: a failed chunk omits the line instead of reaching the
+             root ErrorBoundary and blanking the page. */}
+         <ErrorBoundary fallback={OMIT_LINE}>
+            <Suspense fallback={<HeroLatestPlaceholder />}>
+               <HeroLatest />
+            </Suspense>
+         </ErrorBoundary>
+
+         {/* CTA buttons. The .btn-* stylesheet owns the hover lift; Motion only
+             writes transform during the press (see passThroughTransform). */}
+         <motion.div
+            className="hero-actions grid w-full max-w-sm items-center gap-3 sm:flex sm:w-auto sm:max-w-none sm:flex-wrap sm:justify-center sm:gap-4"
+            variants={heroRow}
+         >
+            <motion.button
+               onClick={() => navigateToSection("projects")}
+               className="btn-primary col-span-2 inline-flex items-center justify-center gap-2 text-sm sm:col-span-1"
+               whileTap={CTA_TAP}
+               transformTemplate={passThroughTransform}
+            >
+               {COPY.projects_cta}
+               <ArrowDownRight size={16} aria-hidden="true" />
+            </motion.button>
+            <motion.button
+               onClick={() => {
+                  setCvLoaded(true);
+                  setCvOpen(true);
+               }}
+               className="btn-outline inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-semibold"
+               style={{ paddingInline: 16 }}
+               whileTap={CTA_TAP}
+               transformTemplate={passThroughTransform}
+               aria-haspopup="dialog"
+            >
+               <FileText size={15} aria-hidden="true" />
+               {COPY.cv_cta}
+            </motion.button>
+            <motion.button
+               onClick={() => {
+                  setCvLoaded(true);
+                  setCvOpen(true);
+                  window.setTimeout(() => window.print(), 500);
+               }}
+               className="inline-flex min-h-11 items-center justify-center gap-2 whitespace-nowrap rounded-lg px-2 text-sm font-medium text-text-secondary transition-colors hover:text-text-primary"
+               whileTap={CTA_TAP}
+               transformTemplate={passThroughTransform}
+               aria-haspopup="dialog"
+            >
+               <Download size={15} aria-hidden="true" />
+               {COPY.pdf_cta}
+            </motion.button>
+         </motion.div>
+
+         {/* Status widget + Social icons */}
+         <HeroSocial />
+
+         {/* In-site CV viewer (lazy: its chunk and the pages load only when
+             opened). Own boundary: a failed chunk leaves the button inert
+             instead of reaching the root ErrorBoundary. */}
+         {cvLoaded && (
+            <ErrorBoundary fallback={OMIT_LINE}>
+               <Suspense fallback={null}>
+                  <CvViewerModal
+                     isOpen={cvOpen}
+                     onClose={() => setCvOpen(false)}
+                  />
+               </Suspense>
+            </ErrorBoundary>
+         )}
+      </motion.div>
+   );
+};
+
+export default HeroContent;

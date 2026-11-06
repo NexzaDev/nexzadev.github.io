@@ -1,0 +1,7 @@
+[
+   {
+      "term": "NSE",
+      "match": ["NSE", "Nmap Scripting Engine"],
+      "definition": "The Nmap Scripting Engine: a Lua environment inside Nmap where a script probes a service and reports what it finds."
+   }
+]

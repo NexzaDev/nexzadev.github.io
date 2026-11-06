@@ -1,0 +1,235 @@
+{
+   "networking": [
+      "Linux",
+      "Bash",
+      "Python",
+      "Lua",
+      "WebSockets",
+      "NSE",
+      "Network Security",
+      "Defensive Auditing",
+      "Protocols & Services"
+   ],
+   "aws": [
+      "Organizations",
+      "SCPs",
+      "RCPs",
+      "Tag Policies",
+      "Control Tower",
+      "IAM Identity Center",
+      "IAM",
+      "Security Hub",
+      "GuardDuty",
+      "Detective",
+      "Config",
+      "KMS",
+      "AWS Backup",
+      "Systems Manager Patch Manager",
+      "VPC",
+      "Transit Gateway",
+      "VPC IPAM",
+      "Direct Connect",
+      "Site-to-Site VPN",
+      "Network Firewall",
+      "Route 53",
+      "ALB",
+      "CloudFront",
+      "API Gateway",
+      "EC2",
+      "EBS",
+      "ECS",
+      "ECR",
+      "Lambda",
+      "S3",
+      "RDS",
+      "DynamoDB",
+      "SNS",
+      "EventBridge",
+      "Step Functions",
+      "CloudWatch",
+      "X-Ray",
+      "CloudFormation",
+      "CDK",
+      "CodePipeline",
+      "CodeBuild",
+      "CodeDeploy",
+      "SageMaker",
+      "Bedrock",
+      "Amazon Bedrock AgentCore",
+      "Amazon Q"
+   ],
+   "devops": [
+      "Terraform",
+      "HCP Terraform",
+      "Atlantis",
+      "Infrastructure as Code",
+      "tftest",
+      "PyTest",
+      "Packer",
+      "Policy-as-Code",
+      "Checkov",
+      "DevSecOps",
+      "Docker",
+      "GitHub Actions",
+      "CI/CD Pipelines",
+      "GitOps",
+      "Blue-Green Deployment",
+      "Canary Deployments",
+      "Cloud Migration",
+      "Ansible",
+      "Jenkins"
+   ],
+   "ai_tools": [
+      "Claude Code",
+      "Kiro",
+      "MCP Protocol",
+      "AI Agent Frameworks",
+      "Anthropic SDK",
+      "OpenAI API",
+      "Cursor AI",
+      "GitHub Copilot"
+   ],
+   "languages": [
+      "JavaScript",
+      "TypeScript",
+      "C++",
+      "Java",
+      "HCL",
+      "Go",
+      "C#",
+      "R",
+      "HTML",
+      "CSS",
+      "MySQL/SQL"
+   ],
+   "backend": [
+      "Node.js",
+      "Express.js",
+      "FastAPI",
+      "REST API",
+      "GraphQL",
+      "JWT",
+      "OAuth",
+      "Multer",
+      "SQLAlchemy",
+      "Drizzle ORM",
+      "Mongoose",
+      "PostgreSQL",
+      "Neon",
+      "MongoDB",
+      "Redis",
+      "SQLite"
+   ],
+   "frontend": [
+      "React",
+      "Next.js",
+      "Astro",
+      "Vite",
+      "Tailwind CSS",
+      "shadcn/ui",
+      "Motion",
+      "Three.js",
+      "Redux",
+      "React Router",
+      "Preact",
+      "Vue",
+      "MUI",
+      "Chart.js",
+      "Axios",
+      "Lucide"
+   ],
+   "tools_platforms": [
+      "Git/GitHub",
+      "VS Code",
+      "Jupyter Notebook",
+      "Postman",
+      "Figma",
+      "SonarQube",
+      "Vercel",
+      "Cloudflare Workers",
+      "Cloudflare R2",
+      "Render",
+      "GitHub Pages",
+      "pnpm",
+      "esbuild",
+      "Chrome Extensions",
+      "Unity",
+      "Canva",
+      "CapCut"
+   ],
+   "cs_fundamentals": [
+      "Data Structures & Algorithms",
+      "System Design",
+      "Object-Oriented Programming",
+      "Computer Networks",
+      "Operating Systems",
+      "Software Engineering",
+      "Database Management Systems"
+   ],
+   "soft_skills": [
+      "Leadership",
+      "Problem Solving",
+      "Communication",
+      "Teamwork",
+      "Critical Thinking",
+      "Adaptability"
+   ],
+   "areas_of_interest": [
+      "Forward Deployed Engineering",
+      "DevOps & Cloud",
+      "AI/ML Engineering",
+      "AI Agents & MCP",
+      "Full-Stack Development",
+      "Open Source",
+      "Game Development"
+   ],
+   "hero_stack": [
+      "Linux",
+      "Python",
+      "Lua",
+      "Bash",
+      "TypeScript",
+      "JavaScript",
+      "Next.js",
+      "Node.js",
+      "Git/GitHub",
+      "React",
+      "WebSockets",
+      "MongoDB"
+   ],
+   "categories": {
+      "networking": {
+         "label": "Networking & Security"
+      },
+      "aws": {
+         "label": "AWS"
+      },
+      "devops": {
+         "label": "DevOps & IaC"
+      },
+      "ai_tools": {
+         "label": "AI Developer Tools"
+      },
+      "languages": {
+         "label": "Languages"
+      },
+      "backend": {
+         "label": "Backend & Databases"
+      },
+      "frontend": {
+         "label": "Frontend"
+      },
+      "tools_platforms": {
+         "label": "Tools & Platforms"
+      },
+      "cs_fundamentals": {
+         "label": "CS Fundamentals"
+      },
+      "soft_skills": {
+         "label": "Soft Skills"
+      },
+      "areas_of_interest": {
+         "label": "Areas of Interest"
+      }
+   }
+}
