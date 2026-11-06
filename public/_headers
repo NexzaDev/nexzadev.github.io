@@ -1,5 +1,5 @@
 /*
-  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-pshQxA7sz/1ImdcFGnQ5GtSLyv3TzZ7U/tMA30AQqkg='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://images.credly.com; font-src 'self' data:; connect-src 'self' https://api.emailjs.com https://github-contributions-api.jogruber.de; media-src 'self'; frame-src 'none'; frame-ancestors 'none'; form-action 'self' mailto:; manifest-src 'self'; worker-src 'self' blob:; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-4JeWOZMt4Y2DoGPKKo8pJBOFyeZXR+B8rf2Q5+JoSJU='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://images.credly.com; font-src 'self' data:; connect-src 'self' https://api.emailjs.com https://github-contributions-api.jogruber.de; media-src 'self'; frame-src 'none'; frame-ancestors 'none'; form-action 'self' mailto:; manifest-src 'self'; worker-src 'self' blob:; upgrade-insecure-requests
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), microphone=(), payment=(), usb=()
