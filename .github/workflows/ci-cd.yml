@@ -63,11 +63,21 @@ jobs:
            if: env.DEPLOY == 'true'
            uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6
 
+         - name: Archive Pages artifact
+           if: env.DEPLOY == 'true'
+           run: |
+              tar --dereference --hard-dereference --directory build \
+                 -cvf "$RUNNER_TEMP/artifact.tar" \
+                 --exclude=.git --exclude=.github .
+
          - name: Upload Pages artifact
            if: env.DEPLOY == 'true'
-           uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
+           uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
            with:
-              path: build
+              name: github-pages
+              path: ${{ runner.temp }}/artifact.tar
+              retention-days: 1
+              if-no-files-found: error
 
    deploy:
       # Never for another ref: a dispatch on a feature branch runs CI only.
